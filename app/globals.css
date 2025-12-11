@@ -3,19 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  color-scheme: light;
+  --bg: #f8fbff;
+  --bg-accent: #eef2ff;
+  --fg: #0f172a;
+  --card: #ffffff;
+}
+
+:root.dark {
+  color-scheme: dark;
+  --bg: #0f172a;
+  --bg-accent: #111827;
+  --fg: #e5e7eb;
+  --card: #1f2937;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  background: radial-gradient(120% 60% at 10% 10%, var(--bg-accent), var(--bg)),
+    radial-gradient(80% 50% at 80% 0%, var(--bg-accent), transparent),
+    var(--bg);
+  color: var(--fg);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 @layer utilities {

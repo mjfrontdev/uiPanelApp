@@ -19,7 +19,7 @@ export default function DashboardLayout({
   }, [router])
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       <Sidebar />
       <div className="flex-1 lg:ml-20 w-full">
         {children}
